@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Condition3.cs" />
     <Compile Include="Condition5.cs" />
+    <Compile Include="ConditionEnds4.cs" />
+    <Compile Include="ConditionPrime.cs" />
     <Compile Include="ConsoleWriter.cs" />
     <Compile Include="EmailWriter.cs" />
     <Compile Include="FizzBuzzGamer.cs" />

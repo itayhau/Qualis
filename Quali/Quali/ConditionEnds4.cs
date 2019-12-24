@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Quali
 {
-    class Condition5 : ICondition
+    class ConditionEnds4 : ICondition
     {
         public bool Check(int number, out string passText)
         {
-            if (number % 5 == 0)
+            if (number % 10 == 4)
             {
-                passText = " BuZZ ";
+                passText = " BAR ";
                 return true;
             }
             passText = "";

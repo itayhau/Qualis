@@ -11,19 +11,32 @@ namespace Quali
         public const int START_FROM = 1;
         public const int END_AT = 100;
 
-        public void PlayFizzBuzz(IWriter writer, params ICondition[] conditions)
+        public void PlayFizzBuzz(IWriter writer, ICondition[] conditionsPlayer1, ICondition[] conditionPlayer2, Func<int, int> whichPlayer)
         {
             string resultText = "";
-            var cond = conditions.ToList(); ;1
+
             for (int i = START_FROM; i <= END_AT; i++)
             {
-                if (cond.Where(c =>
+
+                int passedConditions = 0;
+                ICondition[] conditionList = whichPlayer(i) == 1 ? conditionsPlayer1 : conditionPlayer2;
+                foreach (var condition in conditionList)
                 {
-                    bool result = c.Check(i, out string moreText);
-                    resultText += moreText;
-                    return result;
-                }).ToList().Count  == 0)
+                    bool result = condition.Check(i, out string moreText);
+                    if (result)
+                    {
+                        resultText += moreText;
+                        passedConditions++;
+                    }
+                }
+                if (passedConditions > 0)
+                {
+                    resultText += '\n';
+                }
+                else
+                {
                     resultText += i + "\n";
+                }
             }
             writer.Write(resultText);
         }

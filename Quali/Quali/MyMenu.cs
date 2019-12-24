@@ -8,7 +8,7 @@ namespace Quali
 {
     public class MyMenu : IMenu
     {
-        public int GetUserOptions(int min, int max)
+        private int GetUserOptions(int min, int max)
         {
             int result = -1;
             string option = null;

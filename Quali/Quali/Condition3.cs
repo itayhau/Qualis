@@ -12,7 +12,7 @@ namespace Quali
         {
             if (number % 3 == 0)
             {
-                passText = " FiZZ \n";
+                passText = " FiZZ ";
                 return true;
             }
             passText = "";
